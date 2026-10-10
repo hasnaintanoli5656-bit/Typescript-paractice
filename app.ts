@@ -67,10 +67,10 @@ let a:unknown ;
 //     console.log(a.toFixed())
 // }
 
-//  void 
+//  void ======>  ka matlab hai: function koi value return nahi karta
 
 function foo(a:number , b : number) : number{
-   return a + b
+   return a + b 
 }
 
 // console.log(foo(12 , 14))
@@ -81,37 +81,20 @@ function hello(a:string , b : string) : string{
 
 // console.log(hello("Hasnain " , " Tanoli"))
 
+//  null ====>  variable mein koi value na rakhna.
 
-interface UserObj {
-    email : string,
-    password : number,
-    age : number
-}
+let user:null = null
 
 
-const myObj = {
-    email :"codermhasan@gmail.com",
-    password : 4567890,
-    age : 56
-}
-// console.log(myObj);
+// Never
 
-
-class Bottle {
-    constructor(public  name :string, public price : number, public material:string){
-
+function poo(){
+    while(true){
+        console.log("janiiii")
     }
-
 }
-
-const b1 = new Bottle ("aquafina" , 60 , "plastic")
-console.log(b1)
-
-
-
-
-
-
+poo()
+console.log("poo function chala")
 
 
 

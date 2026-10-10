@@ -48,7 +48,7 @@ let a;
 // }else if(typeof a == "number"){
 //     console.log(a.toFixed())
 // }
-//  void 
+//  void ======>  ka matlab hai: function koi value return nahi karta
 function foo(a, b) {
     return a + b;
 }
@@ -56,21 +56,14 @@ function foo(a, b) {
 function hello(a, b) {
     return "Hello " + a + b;
 }
-const myObj = {
-    email: "codermhasan@gmail.com",
-    password: 4567890,
-    age: 56
-};
-// console.log(myObj);
-class Bottle {
-    name;
-    price;
-    material;
-    constructor(name, price, material) {
-        this.name = name;
-        this.price = price;
-        this.material = material;
+// console.log(hello("Hasnain " , " Tanoli"))
+//  null ====>  variable mein koi value na rakhna.
+let user = null;
+// Never
+function poo() {
+    while (true) {
+        console.log("janiiii");
     }
 }
-const b1 = new Bottle("aquafina", 60, "plastic");
-console.log(b1);
+poo();
+console.log("poo function chala");
