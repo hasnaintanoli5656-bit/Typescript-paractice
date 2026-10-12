@@ -67,3 +67,96 @@ function poo() {
 }
 poo();
 console.log("poo function chala");
+let student1 = {
+    name: "Hasnain Tanoli ",
+    age: 18,
+    ispresent: true
+};
+// console.log(student1)
+function random(obj) {
+    // console.log(obj.ispresent)
+}
+let detailUser = {
+    email: "hasnain@gmail.com",
+    age: 18,
+    isadmin: true
+};
+function xyz(obj) {
+    // console.log(obj)
+}
+let x = "janii";
+x = 1234,
+    x = false,
+    x = null;
+// console.log(x )
+//  CLASS   =====>    Class aik blueprint (naqsha) hoti hai jis ki madad se hum objects banate hain.
+class cars {
+    name;
+    price;
+    color;
+    constructor(name, price, color) {
+        this.name = name;
+        this.price = price;
+        this.color = color;
+    }
+}
+// constructor   =====>   Constructor ek special method hai jo new se object banate waqt automatically execute hota hai.
+let car1 = new cars("CIVIC", 100000, "WHITE");
+let car2 = new cars("GRANDY", 1000000, "SILVER");
+// new    =====>  new ka kaam class se naya object banana hota hai.
+// console.log(car1)
+// console.log(car2)
+// ACCESS  MODIFIER    =====>    (PUBLIC  ,  PRIVATE , PROTECTED)
+// PUBLIC   =====>    Har jagah se access ho sakta hai
+// PRIVATE  =====>    Property ya method ko sirf usi class ke andar access kar sakte hain.
+// PROTECTED   =====>   Property ko us class aur uski child classes ke andar access kar sakte hain,
+class bottle {
+    name;
+    price;
+    material;
+    constructor(name, price, material) {
+        this.name = name;
+        this.price = price;
+        this.material = material;
+        // this.name= "PAKOLA"         
+    }
+}
+let b1 = new bottle("AQUAFINA", 70, "PLASTIC");
+// console.log(b1)
+// b1.name = "nestle"     error in typescript
+class User {
+    userEmail;
+    userAge;
+    constructor(userEmail, userAge) {
+        this.userEmail = userEmail;
+        this.userAge = userAge;
+    }
+}
+class Admin extends User {
+    userPassword;
+    constructor(userEmail, userAge, userPassword) {
+        super(userEmail, userAge);
+        this.userPassword = userPassword;
+        // this.userEmail = "test@gmail.com"
+    }
+}
+// super   =====>   child class mein parent class ke constructor ya methods ko call karne ke liye use hota hai.
+let u1 = new Admin("hasnain@gmail.com", 18, "test?12345");
+// u1.userEmail = "example@gmail.com"
+// console.log(u1)
+// readonly  =====>  Property ko initialize karne ke baad dobara change nahi kar sakte 
+// Optional ?  =====>  Optional property woh property hoti hai jo object mein ho bhi sakti hai aur nahi bhi. TypeScript mein property ke naam ke baad ? lagate hain.
+class student {
+    studentName;
+    roolNum;
+    DOB;
+    constructor(studentName, roolNum, DOB) {
+        this.studentName = studentName;
+        this.roolNum = roolNum;
+        this.DOB = DOB;
+        // this.studentName = "hasnain"   
+    }
+}
+let s1 = new student("janiii", 123456, "10/12/2026");
+// s1.studentName = "Hasnain"  
+// console.log(s1)

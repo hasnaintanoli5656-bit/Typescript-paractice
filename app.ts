@@ -98,9 +98,131 @@ console.log("poo function chala")
 
 
 
+// Interface =====>Interface aik structure ya naqsha hota hai jo batata hai ke kisi object mein kaun-si properties honi chahiye aur unki types kya hongi.
+
+
+interface student {
+    name : string,
+    age : number
+    ispresent : boolean
+}
+
+let student1 = {
+    name : "Hasnain Tanoli ",
+    age : 18,
+    ispresent : true
+}
+// console.log(student1)
+
+
+function random(obj:student){
+// console.log(obj.ispresent)
+}
+// random(student1)
+
+
+// extends  ====>   ka matlab hai kisi pehle se bane structure ki properties ko apne naye structure mein use karna.
+
+
+interface users {
+    email : string,
+    age : number
+}
+
+interface admin extends users{
+    isadmin : boolean 
+}
+
+let detailUser = {
+    email : "hasnain@gmail.com",
+    age : 18,
+    isadmin : true
+}
+
+function xyz (obj :admin) {
+    // console.log(obj)
+}
+
+// xyz(detailUser)
+
+type val = string | number | boolean | null
+
+let x : val = "janii"
+x = 1234,
+x = false,
+x = null
+
+// console.log(x )
+
+    
+//  CLASS   =====>    Class aik blueprint (naqsha) hoti hai jis ki madad se hum objects banate hain.
 
 
 
+class cars {
+    constructor(public name:string , public price:number , public color:string){}
+}
+
+// constructor   =====>   Constructor ek special method hai jo new se object banate waqt automatically execute hota hai.
+
+let car1 = new cars ("CIVIC" , 100000 , "WHITE")
+let car2 = new cars ("GRANDY" , 1000000 , "SILVER")
+
+// new    =====>  new ka kaam class se naya object banana hota hai.
+
+// console.log(car1)
+// console.log(car2)
 
 
+// ACCESS  MODIFIER    =====>    (PUBLIC  ,  PRIVATE , PROTECTED)
 
+
+// PUBLIC   =====>    Har jagah se access ho sakta hai
+
+// PRIVATE  =====>    Property ya method ko sirf usi class ke andar access kar sakte hain.
+
+// PROTECTED   =====>   Property ko us class aur uski child classes ke andar access kar sakte hain,
+
+
+class bottle {
+    constructor(private name:string , private price:number , private material:string){
+        // this.name= "PAKOLA"         
+    }
+}
+
+let b1 = new bottle ("AQUAFINA" , 70 , "PLASTIC")
+// console.log(b1)
+// b1.name = "nestle"     error in typescript
+
+
+class User {
+    constructor(protected userEmail:string , protected userAge:number){
+    }
+}
+
+class Admin extends User{
+    constructor( userEmail:string ,  userAge:number , protected userPassword:string){
+        super(userEmail , userAge)
+        // this.userEmail = "test@gmail.com"
+    }
+}
+
+// super   =====>   child class mein parent class ke constructor ya methods ko call karne ke liye use hota hai.
+
+let u1 = new Admin ("hasnain@gmail.com" , 18 , "test?12345")
+
+// u1.userEmail = "example@gmail.com"
+// console.log(u1)
+
+// readonly  =====>  Property ko initialize karne ke baad dobara change nahi kar sakte 
+// Optional ?  =====>  Optional property woh property hoti hai jo object mein ho bhi sakti hai aur nahi bhi. TypeScript mein property ke naam ke baad ? lagate hain.
+
+class student {
+    constructor(public readonly studentName:string , public roolNum:number , public DOB?:string){
+        // this.studentName = "hasnain"   
+    }
+}
+
+let s1 = new student ("janiii" , 123456 , "10/12/2026" )
+// s1.studentName = "Hasnain"  
+// console.log(s1)
