@@ -226,3 +226,157 @@ class student {
 let s1 = new student ("janiii" , 123456 , "10/12/2026" )
 // s1.studentName = "Hasnain"  
 // console.log(s1)
+
+
+
+
+// optional property
+
+// class User {
+//  constructor(public email : string = "test@gmail.com"){}
+// }
+// let u = new User()
+
+
+// GETTER (get)  ======>   Class ki property ki value ko read ya hasil karne ke liye use hota hai.
+// SETTER (set)  ======>   Class ki property ki value set ya update karne ke liye use hota hai.
+
+class kuchbhi {
+    public age : number = 18
+
+    get abc(){
+        return this.age;
+    }
+    set abc(val:number){
+        this.age = val
+    }
+}
+
+let u = new kuchbhi 
+// u.abc = 49
+// console.log(u.abc)
+
+class BOTTLE {
+    private name : string = "AQUAFINA"
+
+    get brandname(){
+        return this.name
+    }
+    set brandname(val : string){
+        this.name = val
+    }
+}
+
+// let bot1 = new BOTTLE
+// console.log(bot1)
+// console.log(bot1.brandname)
+// bot1.brandname = "NESTLE"
+// console.log(bot1.brandname)
+
+
+// static  ======>   static keyword class ki property ya method ko class ke saath attach karta hai, jise object banaye baghair class ke naam se access kiya ja sakta hai.
+
+class Student {
+    static name : string = "Hasnain Tanoli"
+}
+
+// console.log(Student.name)
+
+
+// abstact ======> 
+
+
+abstract class createDish {
+    constructor(protected kyabananaha:string , protected kisparbananaha : string){}
+}
+
+class created extends createDish{
+    constructor(name : string , gas:string){
+        super(name , gas)
+    }
+}
+
+let dish = new created ("BIRYANI" , "LPG PAR")
+// console.log(dish);
+
+
+
+// Function
+
+
+function wxyz(name : string , cb:(val:string) => string){
+    // console.log( name + cb(" kase ho bhai"))
+}
+
+wxyz("HASNAIN TANOLI " , (val : string) => {
+    // console.log(val)
+    return val
+})
+
+
+// rest operator
+
+// function rest(...arg:number[]){
+// console.log(arg)
+// }
+
+// rest(1,2,3,4,5,6,7,8,9,)
+
+
+
+// function overloading    =====>
+
+
+// signature
+function foooo(a:string , b:string):string
+function foooo(a:number , b:number):number
+
+
+function foooo(a:number | string , b:number | string):string | number{
+    if(typeof a === "string" && typeof b === "string"){
+        return a + b
+    } else if(typeof a === "number" && typeof b === "number"){
+        return a + b
+    }
+    else{
+        throw new Error("invalid arguments")
+    }
+}
+
+
+// console.log(foooo("hasnain " , " tanoli"))
+// console.log(foooo(10 , 10));
+
+
+
+//  generics =====>   dynamic data type la ka jata ha 
+
+
+// function generic<T>(val: T){
+// console.log(val)
+// }
+
+// generic<string>("hasnain")
+// generic<number>(18)
+// generic<boolean>(true)
+
+// class generic <T> {
+//     constructor(public key:T){}
+// }
+
+// let g1 = new generic(false)
+// console.log(g1)
+
+interface generic <T> {
+    email : T
+    password : T
+}
+let obj = {
+    email : 123456,
+    password : "jdld"
+}
+
+function n(obj:generic){
+console.log(obj)
+}
+n(obj)

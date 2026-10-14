@@ -160,3 +160,84 @@ class student {
 let s1 = new student("janiii", 123456, "10/12/2026");
 // s1.studentName = "Hasnain"  
 // console.log(s1)
+// optional property
+// class User {
+//  constructor(public email : string = "test@gmail.com"){}
+// }
+// let u = new User()
+// GETTER (get)  ======>   Class ki property ki value ko read ya hasil karne ke liye use hota hai.
+// SETTER (set)  ======>   Class ki property ki value set ya update karne ke liye use hota hai.
+class kuchbhi {
+    age = 18;
+    get abc() {
+        return this.age;
+    }
+    set abc(val) {
+        this.age = val;
+    }
+}
+let u = new kuchbhi;
+// u.abc = 49
+// console.log(u.abc)
+class BOTTLE {
+    name = "AQUAFINA";
+    get brandname() {
+        return this.name;
+    }
+    set brandname(val) {
+        this.name = val;
+    }
+}
+// let bot1 = new BOTTLE
+// console.log(bot1)
+// console.log(bot1.brandname)
+// bot1.brandname = "NESTLE"
+// console.log(bot1.brandname)
+// static  ======>   static keyword class ki property ya method ko class ke saath attach karta hai, jise object banaye baghair class ke naam se access kiya ja sakta hai.
+class Student {
+    static name = "Hasnain Tanoli";
+}
+// console.log(Student.name)
+// abstact ======> 
+class createDish {
+    kyabananaha;
+    kisparbananaha;
+    constructor(kyabananaha, kisparbananaha) {
+        this.kyabananaha = kyabananaha;
+        this.kisparbananaha = kisparbananaha;
+    }
+}
+class created extends createDish {
+    constructor(name, gas) {
+        super(name, gas);
+    }
+}
+let dish = new created("BIRYANI", "LPG PAR");
+// console.log(dish);
+// Function
+function wxyz(name, cb) {
+    // console.log( name + cb(" kase ho bhai"))
+}
+wxyz("HASNAIN TANOLI ", (val) => {
+    // console.log(val)
+    return val;
+});
+function foooo(a, b) {
+    if (typeof a === "string" && typeof b === "string") {
+        return a + b;
+    }
+    else if (typeof a === "number" && typeof b === "number") {
+        return a + b;
+    }
+    else {
+        throw new Error("invalid arguments");
+    }
+}
+let obj = {
+    email: 123456,
+    password: "jdld"
+};
+function n(obj) {
+    console.log(obj);
+}
+n(obj);
