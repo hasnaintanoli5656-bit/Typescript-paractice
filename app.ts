@@ -376,7 +376,8 @@ let obj = {
     password : "jdld"
 }
 
+
 function n(obj:generic){
-console.log(obj)
+    console.log(obj)
 }
 n(obj)
